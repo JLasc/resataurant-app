@@ -1,3 +1,4 @@
+
 // Dependencies
 // =============================================================
 var express = require("express");
@@ -66,7 +67,13 @@ app.post("/api/tables", function(req, res) {
 
   console.log(newTable);
 
-  tables.push(newTable);
+
+  if (tables.length > 5) {
+    reservations.push(newTable);
+    alert("There are no current tables. You've been added to the waitlist!")
+  } else {
+    tables.push(newTable);
+  }
 
   res.json(newTable);
 });
