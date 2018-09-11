@@ -39,6 +39,9 @@ app.get("/viewtable", function(req, res) {
 app.get("/api/tables", function(req, res) {
   return res.json(tables);
 });
+app.get("/api/waitlist", function(req, res) {
+  return res.json(waitlist);
+});
 
 // Displays name for each table, or returns false
 app.get("/api/tables/:table", function(req, res) {
@@ -54,6 +57,7 @@ app.get("/api/tables/:table", function(req, res) {
   return res.json(false);
   });
 });
+
 
 // Create New tables - takes in JSON input
 app.post("/api/tables", function(req, res) {

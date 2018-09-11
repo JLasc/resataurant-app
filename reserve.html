@@ -78,6 +78,7 @@
 		$(document).ready(function() {
 			$(".submit").on("click", function(event) {
 				event.preventDefault();
+
 				var newTable = {
 				name: $("#reserve_name").val().trim(),
 				phoneNumber: $("#reserve_phone").val().trim(),
@@ -90,6 +91,7 @@
 				console.log("reservation.html", data);
 				alert("Adding table...");
 				console.log(data);
+				
 				});
 			});
 		})
