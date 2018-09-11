@@ -16,6 +16,11 @@ app.use(bodyParser.json());
 
 // Tabless (DATA)
 // =============================================================
+
+module.exports = {
+  table: tables,
+  wait: waitlist
+}
 var tables = [];
 var waitlist = [];
 
@@ -58,6 +63,20 @@ app.get("/api/tables/:table", function(req, res) {
   });
 });
 
+function showNames() {
+  for (i=0; i < tables.length; i++){
+      `    
+    <div class="card-body">
+      <p class="card-text">${tables[i].routeName}</p>
+    </div>
+  </div>`
+
+  }
+
+
+/* $("#waitlistSection").append(test) */
+
+}
 
 // Create New tables - takes in JSON input
 app.post("/api/tables", function(req, res) {
@@ -75,6 +94,12 @@ app.post("/api/tables", function(req, res) {
     tables.push(newTable);
 
   res.json(newTable);
+
+  
+
+showNames()
+
+  
 });
 
 // Starts the server to begin listening
