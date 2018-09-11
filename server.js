@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 // Tabless (DATA)
 // =============================================================
 var tables = [];
-var reservations = [];
+var waitlist = [];
 
 // Routes
 // =============================================================
@@ -69,7 +69,7 @@ app.post("/api/tables", function(req, res) {
 
 
   if (tables.length > 5) {
-    reservations.push(newTable);
+    waitlist.push(newTable);
     alert("There are no current tables. You've been added to the waitlist!")
   } else {
     tables.push(newTable);
