@@ -72,12 +72,7 @@ app.post("/api/tables", function(req, res) {
   console.log(newTable);
 
 
-  if (tables.length > 5) {
-    waitlist.push(newTable);
-    alert("There are no current tables. You've been added to the waitlist!")
-  } else {
     tables.push(newTable);
-  }
 
   res.json(newTable);
 });
